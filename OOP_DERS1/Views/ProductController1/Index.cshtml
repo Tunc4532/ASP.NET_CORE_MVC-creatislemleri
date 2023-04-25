@@ -1,0 +1,29 @@
+﻿@using OOP_DERS1.ENTİTY1
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Corelayout.cshtml";
+}
+<h1>Ürün Sayfası</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ürün Adı</th>
+        <th>Stok</th>
+        <th>Fiyat</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+             <td>@item.Name</td>
+            <td>@item.Stock</td>
+            <td>@item.price</td>
+            <td><a href="/ProductController1/DeleteProduct/ @item.Id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/ProductController1/UpdateProduct/ @item.Id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/ProductController1/AddProduct/" class="btn btn-primary">Yeni Ürün Girişi</a>

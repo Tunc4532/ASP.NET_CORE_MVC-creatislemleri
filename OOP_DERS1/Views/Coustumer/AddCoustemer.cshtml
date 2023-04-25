@@ -1,0 +1,18 @@
+﻿@model OOP_DERS1.ENTİTY1.coustemer
+
+@{
+    ViewData["Title"] = "AddCoustemer";
+    Layout = "~/Views/Shared/_Corelayout.cshtml";
+}
+
+<h1>Yeni Müşteri Sayfası</h1>
+
+<form method="post">
+    @Html.Label("Müşteri Adı")
+    @Html.TextBoxFor(x=>x.Name,new {@class = "form-control"})
+    <br />
+    @Html.Label("Müşteri Şehri")
+    @Html.TextBoxFor(x=>x.City,new {@class = "form-control"})
+    <br />
+    <button class="btn btn-warning">Müşderiyi Kaydet</button>
+</form>
